@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/monitoring/static/css/main.7d754993.css",
-    "main.js": "/monitoring/static/js/main.e25fea63.js",
-    "static/js/453.2ba38637.chunk.js": "/monitoring/static/js/453.2ba38637.chunk.js",
-    "static/media/MICEGothic.ttf": "/monitoring/static/media/MICEGothic.5a7fbc79a4a1221ac7ce.ttf",
-    "static/media/MICEGothic Bold.ttf": "/monitoring/static/media/MICEGothic Bold.ce471d06755dac9df9bc.ttf",
-    "static/media/HanmiLogo.svg": "/monitoring/static/media/HanmiLogo.33151dd878bdfa6b6b302b13f79c9122.svg",
-    "index.html": "/monitoring/index.html",
-    "main.7d754993.css.map": "/monitoring/static/css/main.7d754993.css.map",
-    "main.e25fea63.js.map": "/monitoring/static/js/main.e25fea63.js.map",
-    "453.2ba38637.chunk.js.map": "/monitoring/static/js/453.2ba38637.chunk.js.map"
+    "main.css": "https://kimcalm.github.io/monitoring/static/css/main.a5ee9f0b.css",
+    "main.js": "https://kimcalm.github.io/monitoring/static/js/main.8bb5d56f.js",
+    "static/js/453.2ba38637.chunk.js": "https://kimcalm.github.io/monitoring/static/js/453.2ba38637.chunk.js",
+    "static/media/MICEGothic.ttf": "https://kimcalm.github.io/monitoring/static/media/MICEGothic.5a7fbc79a4a1221ac7ce.ttf",
+    "static/media/MICEGothic Bold.ttf": "https://kimcalm.github.io/monitoring/static/media/MICEGothic Bold.ce471d06755dac9df9bc.ttf",
+    "static/media/HanmiLogo.svg": "https://kimcalm.github.io/monitoring/static/media/HanmiLogo.33151dd878bdfa6b6b302b13f79c9122.svg",
+    "index.html": "https://kimcalm.github.io/monitoring/index.html",
+    "main.a5ee9f0b.css.map": "https://kimcalm.github.io/monitoring/static/css/main.a5ee9f0b.css.map",
+    "main.8bb5d56f.js.map": "https://kimcalm.github.io/monitoring/static/js/main.8bb5d56f.js.map",
+    "453.2ba38637.chunk.js.map": "https://kimcalm.github.io/monitoring/static/js/453.2ba38637.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7d754993.css",
-    "static/js/main.e25fea63.js"
+    "static/css/main.a5ee9f0b.css",
+    "static/js/main.8bb5d56f.js"
   ]
 }
