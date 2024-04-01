@@ -1,18 +1,18 @@
 {
   "files": {
     "main.css": "/monitoring/static/css/main.7d754993.css",
-    "main.js": "/monitoring/static/js/main.4be92546.js",
+    "main.js": "/monitoring/static/js/main.dab9c18d.js",
     "static/js/453.2ba38637.chunk.js": "/monitoring/static/js/453.2ba38637.chunk.js",
     "static/media/MICEGothic.ttf": "/monitoring/static/media/MICEGothic.5a7fbc79a4a1221ac7ce.ttf",
     "static/media/MICEGothic Bold.ttf": "/monitoring/static/media/MICEGothic Bold.ce471d06755dac9df9bc.ttf",
-    "static/media/HanmiLogo.svg": "/monitoring/static/media/HanmiLogo.e6ab7f693b0ffea202efb9b1dcf140ea.svg",
+    "static/media/HanmiLogo.svg": "/monitoring/static/media/HanmiLogo.33151dd878bdfa6b6b302b13f79c9122.svg",
     "index.html": "/monitoring/index.html",
     "main.7d754993.css.map": "/monitoring/static/css/main.7d754993.css.map",
-    "main.4be92546.js.map": "/monitoring/static/js/main.4be92546.js.map",
+    "main.dab9c18d.js.map": "/monitoring/static/js/main.dab9c18d.js.map",
     "453.2ba38637.chunk.js.map": "/monitoring/static/js/453.2ba38637.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.7d754993.css",
-    "static/js/main.4be92546.js"
+    "static/js/main.dab9c18d.js"
   ]
 }
