@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: "miceRegular";
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+@font-face {
+  font-family: "miceRegular";
+  src: url("./fonts/MICEGothic.ttf");
+}
+
+@font-face {
+  font-family: "miceBold";
+  src: url("./fonts/MICEGothic Bold.ttf");
+}

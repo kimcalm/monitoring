@@ -1,0 +1,14 @@
+.react-datepicker {
+    font-family: "miceRegular"; /* 원하는 폰트로 변경 */
+  }
+
+.react-datepicker__day--outside-month {
+    color: #ebebeb !important;
+}
+
+.react-datepicker__day:nth-child(1){ 
+    color:red; /* 일요일 날짜*/
+}
+.react-datepicker__day:nth-child(7){
+    color:#8685FF; /* 토요일 날짜 */
+}
