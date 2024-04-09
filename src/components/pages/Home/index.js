@@ -1,5 +1,6 @@
 import Navbar from "../../organism/Home/NavBar";
 import News from "../../organism/Home/News";
+import Pharms from "../../organism/Home/Pharms";
 
 function Home() {
     return (
@@ -7,6 +8,7 @@ function Home() {
         <div>
           <Navbar/>
           <News/>
+          <Pharms />
         </div>
       </>
     );

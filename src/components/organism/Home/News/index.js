@@ -10,8 +10,14 @@ function News() {
             <SearchDate />
         </div>
         <div className="bg-slate-100 flex"> 
-          <NewsWordcloud />
-          <NewsList />
+          <div>
+            <p className="text-3xl">주요 키워드</p>
+            <NewsWordcloud />
+          </div>
+          <div>
+            <p className="text-3xl">주요 뉴스</p>
+            <NewsList />
+          </div>
         </div>
       </div>
       </>
