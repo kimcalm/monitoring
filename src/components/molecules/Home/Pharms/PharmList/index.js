@@ -2,7 +2,7 @@ import { AgGridReact } from 'ag-grid-react'; // AG Grid Component
 import "ag-grid-community/styles/ag-grid.css"; // Mandatory CSS required by the grid
 import "ag-grid-community/styles/ag-theme-quartz.css"; // Optional Theme applied to the grid
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 
 // 판매처, 생산처, 주원료, 보험약가, 생산금액, 생산량, 단위, 영향성 품목 
@@ -18,15 +18,32 @@ const formatNumber = (number) => {
 };
 
 // 영향성 품목 대상 강조하기 (빨강색 & 볼드)
-const impactCellStyle = (params) => {
-    if (params.value === "O") {
-        return { color: 'red', fontFamily: 'miceBold' }; // Customize as needed
-    }
-    return null; // Default styling
-};
+// const impactCellStyle = (params) => {
+//     if (params.value === "O") {
+//         return { color: 'red', fontFamily: 'miceBold' }; // Customize as needed
+//     }
+//     return null; // Default styling
+// };
 
 
-function PharmList() {
+
+
+
+function PharmList(props) {
+    // 영향성 품목 있으면, 빨간색 글씨크기 & 클락하면 alert 창 나오게하기, 부모 Component로 props!
+    const ImpactCellRenderer = (params) => {
+        const handleClick = () => {
+            if (params.value === "O") {
+                props.setData(true)
+            }
+        };
+
+        return (
+            <span onClick={handleClick} style={{ cursor: 'pointer', color: params.value === "O" ? 'red' : 'black', fontWeight: params.value === "O" ? 'bold' : 'normal' }}>
+                {params.value}
+            </span>
+        );
+    };
 
     const [rowData, setRowData] = useState([
         { 판매처: "동아에스티(주)", 생산처: "동아에스티(주)", 품목명: "바라클정0.5밀리그램(엔테카비르)", 주원료: "엔테카비르", 보험약가: 10, 생산금액: 1000000, 생산량: 1000, 단위: "T", 영향성품목: "O" },
@@ -52,7 +69,11 @@ function PharmList() {
         { field: "생산금액", width: 150, valueFormatter: currencyFormatter },
         { field: "생산량", width: 150, valueFormatter: currencyFormatter },
         { field: "단위", width: 150, },
-        { field: "영향성품목", width: 150, cellStyle: impactCellStyle}
+        {
+            field: "영향성품목", width: 150,
+            // cellStyle: impactCellStyle,
+            cellRenderer: ImpactCellRenderer
+        }
     ]);
 
 
