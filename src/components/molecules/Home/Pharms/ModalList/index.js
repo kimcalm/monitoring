@@ -3,8 +3,10 @@ import React, { useEffect, useState } from "react";
 import Modal from "react-modal";
 import EffectList from "../../Modals/EffectList";
 import InventoryList from "../../Modals/InventoryList";
+import RiskToggle from "../../Modals/RiskToggle";
 
-import GreenCircle from "../../../../../assets/danger/GreenCircle.png"
+import toggleDeactivate from "../../../../../assets/toggleRight.png"
+import toggleActivate from "../../../../../assets/toggleDown.png"
 
 
 const customStyles = {
@@ -49,6 +51,13 @@ function ModalList(props) {
     }, [props.data]);  // props.data가 변경될 때마다 이 효과를 실행합니다.
 
 
+    // 위험도 기준 설명 토글
+    const [toggle, setToggle] = useState(false)
+
+    const toggleVisibility = () => {
+        setToggle(!toggle);  // Toggle the current state
+    };
+
     return (
         <>
             <div className='flex mt-5'>
@@ -59,6 +68,7 @@ function ModalList(props) {
                     style={customStyles}
                     contentLabel="Example Modal"
                 >
+                    <button onClick={closeModal}>Close</button>
                     <div className="mt-5">
                         <p className="text-3xl mb-5">영향성 품목 리스트</p>
                         <EffectList />
@@ -66,11 +76,18 @@ function ModalList(props) {
                     <div className="mt-5">
                         <p className="text-3xl mb-5">재고 현황</p>
                         <InventoryList />
-                        <div className="my-5">
-                            <span>위험도 기준 (고위험 : <img src={GreenCircle}/>, 중위험 : , 저위험 : , 초저위험 :)</span>
-                        </div>
+                        <button onClick={toggleVisibility} className="flex items-center">
+                            <img src={toggle ? toggleActivate : toggleDeactivate} style={{ width: '12px', height: '12px' }} className="mr-2"/>
+                            <div className="my-5">
+                                <span>위험도 기준 : </span>
+                                <span style={{ color: 'red' }}>고위험</span><span> > </span>
+                                <span style={{ color: 'orange' }}>중위험</span><span> > </span>
+                                <span style={{ color: 'green' }}>저위험</span><span> > </span>
+                                <span style={{ color: 'blue' }}>초저위험</span>
+                            </div>
+                        </button>
+                        {toggle && <RiskToggle />}
                     </div>
-                    <button onClick={closeModal}>Close</button>
                 </Modal>
             </div>
         </>

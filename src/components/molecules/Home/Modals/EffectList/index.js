@@ -4,6 +4,15 @@ import "ag-grid-community/styles/ag-theme-quartz.css"; // Optional Theme applied
 
 import React, { useState } from 'react';
 
+// 숫자 3자리수 마다 콤마 찍기
+const currencyFormatter = (params) => {
+    return formatNumber(params.value);
+};
+
+const formatNumber = (number) => {
+    return Math.floor(number).toLocaleString();
+};
+
 function EffectList() {
 
     const [rowData, setRowData] = useState([
@@ -20,7 +29,7 @@ function EffectList() {
         },
         { field: "품목명", minWidth: 300, },
         { field: "제형", width: 150, },
-        { field: "전년도 판매금액", width: 150, }
+        { field: "전년도 판매금액", width: 150, valueFormatter: currencyFormatter }
     ]);
 
 
