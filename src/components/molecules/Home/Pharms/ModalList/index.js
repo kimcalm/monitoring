@@ -4,6 +4,8 @@ import Modal from "react-modal";
 import EffectList from "../../Modals/EffectList";
 import InventoryList from "../../Modals/InventoryList";
 import RiskToggle from "../../Modals/RiskToggle";
+import StockGraph from "../../Modals/StockGraph";
+import StockList from "../../Modals/StockList";
 
 import toggleDeactivate from "../../../../../assets/toggleRight.png"
 import toggleActivate from "../../../../../assets/toggleDown.png"
@@ -87,6 +89,10 @@ function ModalList(props) {
                             </div>
                         </button>
                         {toggle && <RiskToggle />}
+                        <div className="flex">
+                            <StockGraph />
+                            <StockList />
+                        </div>
                     </div>
                 </Modal>
             </div>

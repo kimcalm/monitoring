@@ -23,7 +23,7 @@ const stringFormatter = (params) => {
         case 2:
             return "중위험";     // Medium Risk
         case 3:
-            return "초고위험"; // High Risk
+            return "고위험"; // High Risk
         default:
             return "정보 없음"; // No Information, handles unexpected values
     }

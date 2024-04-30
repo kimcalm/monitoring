@@ -6,6 +6,11 @@ import makeAnimated from 'react-select/animated';
 function SearchPharm() {
     const animatedComponents = makeAnimated();
 
+    // 강제 새로고침
+    const handleRefresh = () => {
+        window.location.reload(); // Navigate to a specific route
+    };
+
     const options = [
         { value: 'chocolate', label: 'Chocolate' },
         { value: 'strawberry', label: 'Strawberry' },
@@ -98,6 +103,9 @@ function SearchPharm() {
                         components={animatedComponents}
                         isMulti />
                 </div>
+                <button className="rounded hover:rounded-lg bg-blue-300 mr-3 pl-4 pr-4 text-xl miceBold"
+                    onClick={
+                        handleRefresh}>조회</button>
 
             </div>
         </>
