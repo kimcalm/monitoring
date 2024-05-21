@@ -1,32 +1,51 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import WordCloud from "react-d3-cloud";
 
-function NewsWordcloud() {
-    const textDataInfo = [{ text: "불순물", value: 1000 },
-    { text: "공급", value: 1000 },
-    { text: "중단", value: 9000 },
-    { text: "환절기", value: 5000 },
-    { text: "백신", value: 10 },
-    { text: "주의", value: 300 },
-    { text: "금지", value: 100 }]
+function NewsWordcloud(props) {
+    const [keywords, setKeywords] = useState([]);
+
+    useEffect(() => {
+        const propsData = props.data;
+        const objectKeywords = {};
+        const setkeywords = new Set();
+
+        Object.values(propsData).forEach(data => {
+            Object.values(data).forEach(value => {
+                value.mainKeywords.forEach(keyword => {
+                    if (!setkeywords.has(keyword)) {
+                        setkeywords.add(keyword);
+                        objectKeywords[keyword] = 1;
+                    } else {
+                        objectKeywords[keyword] += 1;
+                    }
+                });
+            });
+        });
+
+        const updatedKeywords = [];
+        for (let key in objectKeywords) {
+            updatedKeywords.push({ text: key, value: objectKeywords[key] });
+        }
+
+        setKeywords(updatedKeywords);
+        // console.log("Updated Keywords: ", keywords); // Log to check the state
+    }, [props.data]);
 
     return (
-        <>
-            <div className='w-[32rem]' >
-                <WordCloud
-                    data={textDataInfo}
-                    // onWordClick={props.wordClickHandler}
-                    font="miceRegular"
-                    fontSize={(word) => Math.log2(word.value) * 10}
-                    spiral="archimedean"
-                    // width={1000}
-                    // height={1000}
-                    rotate={() => 0}
-                    random={() => 0}
-                    padding={5}
-                />
-            </div>
-        </>
+        <div className='w-[32rem]'>
+            <WordCloud
+                data={keywords}
+                onWordClick={props.onWordClick}
+                font="miceRegular"
+                fontSize={(word) => Math.log2(word.value) * 100} // Adjusted to a more reasonable size factor
+                // fontSize={50} // Adjusted to a more reasonable size factor
+                spiral="archimedean"
+                rotate={() => 0}
+                random={() => 0}
+                padding={5}
+                transitionDuration= '1000'
+            />
+        </div>
     );
 }
 
